@@ -1,0 +1,192 @@
+
+body {
+    font-family: Arial, sans-serif; /* Đặt font chữ dễ đọc */
+    line-height: 1.6; /* Đặt chiều cao dòng */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Màu nền chung */
+}
+
+/* * Bước 3-6: Styling Header và Navigation 
+ */
+header {
+    background: #333; /* Bước 4: Đặt nền tối */
+    color: #fff; /* Bước 4: Chữ trắng */
+    padding: 1rem 0;
+    border-bottom: #0779e4 3px solid;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+/* Bước 5: Sử dụng display: flex để tạo menu ngang */
+nav ul {
+    display: flex;
+    justify-content: center; /* Căn giữa các mục menu */
+    list-style: none; /* Loại bỏ style mặc định của list */
+    padding: 0;
+    margin: 0;
+}
+
+/* Bước 6: Thêm khoảng cách giữa các mục menu */
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #0779e4; /* Hiệu ứng khi di chuột */
+}
+
+/* * Bước 7-10: Styling Danh sách sản phẩm 
+ */
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Bước 8: Sử dụng ID #product-list để định kiểu */
+#product-list {
+    /* Bước 9: Sử dụng Flexbox để chia cột */
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các item xuống hàng khi không đủ chỗ */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    justify-content: center;
+}
+
+/* Bước 8: Sử dụng class .product-item để định kiểu */
+.product-item {
+    /* Bước 9: Mỗi sản phẩm chiếm ~30% */
+    flex: 1 1 30%; 
+    min-width: 280px; /* Chiều rộng tối thiểu để không bị quá hẹp */
+    
+    /* Các style trang trí khác */
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Bước 18: Đảm bảo ảnh co dãn (max-width: 100%) */
+/* Thêm style để ảnh đẹp hơn */
+.product-item img {
+    max-width: 100%;
+    height: 200px; /* Cố định chiều cao */
+    width: 200px;  /* Cố định chiều rộng */
+    object-fit: cover; /* Giữ tỷ lệ ảnh, tránh bị méo */
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+}
+
+/* Bước 10: Định dạng bên trong sản phẩm */
+.product-item h3 {
+    margin: 10px 0;
+    color: #0779e4; /* Tên sản phẩm màu nổi bật */
+}
+
+.product-item .price {
+    font-weight: bold;
+    color: #e63946; /* Giá màu nổi bật */
+}
+
+/* * Bước 11-15: Styling Form và Footer 
+ */
+
+/* Bước 12: Đặt form vào khung, căn giữa */
+#contact-form {
+    max-width: 500px; /* Giới hạn chiều rộng form */
+    margin: 20px auto; /* Căn giữa form */
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact-form div {
+    margin-bottom: 15px; /* Khoảng cách giữa các trường */
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Bước 13: Style cho ô nhập liệu */
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box; /* Giúp padding không làm vỡ layout */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Bước 14: Style cho nút gửi */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #0779e4; /* Màu nền nổi bật */
+    color: white; /* Chữ trắng */
+    border: none;
+    border-radius: 5px; /* Bo tròn góc */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Bước 14: Thêm hiệu ứng hover */
+button[type="submit"]:hover {
+    background: #056abf;
+}
+
+/* Bước 15: Styling Footer */
+footer {
+    text-align: center; /* Căn giữa nội dung */
+    padding: 20px 0;
+    background: #333; /* Nền sẫm màu tương tự header */
+    color: #aaa; /* Chữ xám, nhỏ hơn */
+    margin-top: 20px;
+}
+
+/* * Bước 16-18: Thiết kế Responsive 
+ */
+
+/* Bước 17: Sử dụng media query cho màn hình nhỏ (mobile) */
+@media (max-width: 600px) {
+    
+    /* Chuyển menu thành dạng dọc */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Khoảng cách menu dọc */
+    }
+
+    /* Chuyển danh sách sản phẩm sang 1 cột */
+    #product-list {
+        flex-direction: column;
+    }
+
+    /* Đảm bảo item chiếm 100% chiều rộng */
+    .product-item {
+        flex-basis: 100%; /* Tương đương flex: 1 1 100% */
+    }
+}
+
